@@ -1,0 +1,2 @@
+Primary color #009EF8
+Secondary color #1b3848
