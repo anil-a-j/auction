@@ -30,7 +30,8 @@ const AskItem = () => {
 
   const dispatch = useDispatch();
   const { countries, locationError, states } = useSelector(selectLocation);
-  const { itemTypes, itemAskError, itemStatus } = useSelector(selectItem);
+  const { itemTypes, itemAskedError, itemAskedStatus } =
+    useSelector(selectItem);
 
   const makeARequest = (e) => {
     e.preventDefault();
@@ -51,13 +52,13 @@ const AskItem = () => {
   };
 
   useEffect(() => {
-    if (itemAskError) {
-      setError(itemAskError);
+    if (itemAskedError) {
+      setError(itemAskedError);
     }
     if (locationError) {
       setError(locationError);
     }
-    if (itemStatus === "Request added") {
+    if (itemAskedStatus === "Request added") {
       setItem("");
       setItemType("");
       setDescription("");
@@ -66,7 +67,7 @@ const AskItem = () => {
       setExpireDate("");
       setError("");
     }
-  }, [locationError, itemAskError, itemStatus]);
+  }, [locationError, itemAskedError, itemAskedStatus]);
 
   useEffect(() => {
     dispatch(loadCountries());
@@ -154,7 +155,7 @@ const AskItem = () => {
               onChange={(e) => setExpireDate(e.target.value)}
               required
             />
-            <button type="submit" className="btn-dark mx-2 px-3 py-1 rounded">
+            <button type="submit" className="btn-blue mx-2 px-3 py-1 rounded">
               Send
             </button>
           </div>

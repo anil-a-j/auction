@@ -29,6 +29,7 @@ const Search = () => {
     if (searchQuery && type && country && state) {
       const searchData = { searchQuery, type, country, state };
       dispatch(searchItems(searchData));
+      setError("");
     } else {
       setError("can't leave any fields as empty!");
     }
@@ -46,7 +47,7 @@ const Search = () => {
   }, []);
 
   return (
-    <div className="search bg-white shadow-sm p-4 mt-5">
+    <div className="search rounded-L bg-white shadow-sm p-4 mt-5">
       <h2 className="text-center">Search</h2>
       <form onSubmit={search}>
         <input
@@ -111,7 +112,7 @@ const Search = () => {
             </select>
           </div>
         </div>
-        <button type="submit" className="w-100 btn btn-dark py-1 rounded">
+        <button type="submit" className="w-100 btn btn-blue py-1 rounded">
           Search
         </button>
         {error && (

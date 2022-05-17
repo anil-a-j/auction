@@ -60,7 +60,7 @@
     background-color: #000000;
   }
   &:checked::before {
-    background-color: #ffffff;
+    background-color: $white;
   }
 }
 
@@ -74,8 +74,25 @@
   border-radius: 20px;
 }
 
-.btn-dark {
+.btn-blue {
   background-color: $dark-blue;
   border: none;
+  color: $white;
   text-transform: uppercase;
+}
+
+.bg-image {
+  background-image: url("./bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.btn-light-green {
+  background: #00af8c;
+  color: #ffffff;
+  &:hover {
+    color: #ffffff;
+  }
 }

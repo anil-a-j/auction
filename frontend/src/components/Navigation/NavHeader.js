@@ -33,6 +33,16 @@ const NavHeader = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
+            {userInfo && (
+              <li className="nav-item">
+                <Link
+                  className="nav-link btn-blue text-white rounded"
+                  to="/items"
+                >
+                  Ask Items
+                </Link>
+              </li>
+            )}
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Home
@@ -52,13 +62,6 @@ const NavHeader = () => {
                 </Link>
               </li>
             )}
-            {userInfo && (
-              <li className="nav-item">
-                <Link className="nav-link" to="/items">
-                  Items
-                </Link>
-              </li>
-            )}
             {!userInfo && (
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
@@ -74,9 +77,9 @@ const NavHeader = () => {
               </li>
             )}
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/aboutus">
                 About us
-              </a>
+              </Link>
             </li>
             {userInfo && (
               <li className="nav-item">

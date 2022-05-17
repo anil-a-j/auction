@@ -2,18 +2,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   askService,
   itemTypeService,
-  // loadSearchItemsService,
   searchItemsService,
 } from "./itemServices";
 
 const initialState = {
   searchResult: "",
-  itemStatus: "",
+  searchResultStatus:"",
+  searchResultError:"",
   itemAsked: "",
-  itemAskError: "",
+  itemAskedStatus: "",
+  itemAskedError: "",
   itemTypes: "",
+  itemTypesStatus:"",
   itemTypesError: "",
-  searchResultError: "",
 };
 
 export const askItem = createAsyncThunk(
@@ -41,32 +42,32 @@ export const itemSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(askItem.pending, (state, action) => {
-        state.itemStatus = "sending";
+        state.itemAskedStatus = "sending";
       })
       .addCase(askItem.fulfilled, (state, action) => {
         state.itemAsked = action.payload;
-        state.itemStatus = "Request added";
+        state.itemAskedStatus = "Request added";
       })
       .addCase(askItem.rejected, (state, action) => {
         state.itemStatus = "";
-        state.itemAskError = action.error.message;
+        state.itemAskedError = action.error.message;
       })
       .addCase(loadItemTypes.pending, (state, action) => {
-        state.itemStatus = "loading";
+        state.itemTypesStatus = "loading";
       })
       .addCase(loadItemTypes.fulfilled, (state, action) => {
         state.itemTypes = action.payload;
-        state.itemStatus = "";
+        state.itemTypesStatus = "";
       })
       .addCase(loadItemTypes.rejected, (state, action) => {
         state.itemTypesError = action.error.message;
       })
       .addCase(searchItems.pending, (state, action) => {
-        state.itemStatus = "loading";
+        state.searchResultStatus = "loading";
       })
       .addCase(searchItems.fulfilled, (state, action) => {
         state.searchResult = action.payload;
-        state.itemStatus = "";
+        state.searchResultStatus = "loaded";
       })
       .addCase(searchItems.rejected, (state, action) => {
         state.searchResultError = action.error.message;

@@ -94,19 +94,19 @@ const Profile = () => {
             placeholder="Re-type password"
             onChange={(e) => setRePassword(e.target.value)}
           />
-          <div className="m-2 p-1 align-items-baseline d-flex justify-content-evenly">
-            <label>Is this Shop ?</label>
+          <div className="m-2 p-1 align-items-baseline d-flex">
+            <label className="me-auto">Is this Shop ?</label>
             <input
               type="checkbox"
-              className="checkbox"
+              className="checkbox mx-auto"
               checked={type == "Yes" ? true : false}
               onChange={(e) =>
                 e.target.checked ? setType("Yes") : setType("No")
               }
             />
-            <p className="mb-0">{type}</p>
+            <p className="mb-0 mx-auto">{type ? type : "No"}</p>
           </div>
-          <button type="submit" className="btn-dark m-2 py-1 rounded">
+          <button type="submit" className="btn-blue m-2 py-1 rounded">
             Update
           </button>
           {error && (

@@ -25,7 +25,7 @@ const AccountSettings = () => {
             if (username !== userInfo.username) return;
             dispatch(deleteUserAccount());
           }}
-          className="btn-dark rounded p-2"
+          className="btn-blue rounded p-2"
         >
           Delete Account
         </button>

@@ -45,7 +45,7 @@ const Settings = () => {
                     dispatch(deleteUserImage());
                   }
                 }}
-                className="btn-dark m-2 py-1 rounded btn-dark border-0 mx-auto px-2 d-block"
+                className="btn-blue m-2 py-1 rounded btn-blue border-0 mx-auto px-2 d-block"
               >
                 Delete Image
               </button>

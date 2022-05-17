@@ -4,9 +4,7 @@ import "./Home.scss";
 const Home = () => {
   return (
     <div className="home container-fluid">
-      <h1 className="fw-bold text-center fst-italic mt-5 pt-5">
-        HOME SWEET HOME
-      </h1>
+      <h1 className="fw-bold text-center fst-italic mt-5 pt-5"></h1>
     </div>
   );
 };

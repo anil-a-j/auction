@@ -4,6 +4,7 @@ import Home from "./screens/Home/Home.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LogIn from "./screens/LogIn/LogIn";
 import SignIn from "./screens/Signin/Signin";
+import About from "./screens/About/About";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { checkToken, selectAuth } from "./redux/store/auth/authSlice";
@@ -48,6 +49,7 @@ function App() {
             </Route>
             <Route path="/login" element={<LogIn />} />
             <Route path="/signin" element={<SignIn />} />
+            <Route path="/aboutus" element={<About />} />
             <Route
               path="*"
               element={

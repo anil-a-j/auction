@@ -65,7 +65,9 @@ const searchItems = AsyncHandler(async (req, res) => {
     itemType: type,
     country: searchCountry,
     state: searchState,
-  }).select("_id user itemRequest description itemType country state");
+  })
+    .populate({ path: "user" })
+    .select("_id itemRequest description itemType country state");
   //shortcut without match .populate("country","country state")
 
   if (items) {

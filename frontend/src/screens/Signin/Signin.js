@@ -36,44 +36,46 @@ const SignIn = () => {
   }, [userInfo, userError]);
 
   return (
-    <div className="credentials rounded-L bg-white shadow-sm py-4 px-4 d-block mx-auto">
-      <h2 className="text-center">Sign In</h2>
-      <form onSubmit={submitRegister}>
-        <div className="d-flex flex-column">
-          <input
-            type="email"
-            className="custom-input m-2 p-1 px-2"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            className="custom-input m-2 p-1 px-2"
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="password"
-            className="custom-input m-2 p-1 px-2"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            type="password"
-            className="custom-input m-2 p-1 px-2"
-            placeholder="Re-type password"
-            onChange={(e) => setRePassword(e.target.value)}
-          />
-          <button type="submit" className="btn-dark m-2 py-1 rounded">
-            Sign In
-          </button>
-          {error && (
-            <p className="text-danger text-center small p-0 m-2 alert alert-danger">
-              {error}
-            </p>
-          )}
-        </div>
-      </form>
+    <div className="fixed bg-image">
+      <div className="credentials rounded-L bg-white shadow-sm py-4 px-4 d-block mx-auto">
+        <h2 className="text-center">Sign In</h2>
+        <form onSubmit={submitRegister}>
+          <div className="d-flex flex-column">
+            <input
+              type="email"
+              className="custom-input m-2 p-1 px-2"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="text"
+              className="custom-input m-2 p-1 px-2"
+              placeholder="Username"
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <input
+              type="password"
+              className="custom-input m-2 p-1 px-2"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              className="custom-input m-2 p-1 px-2"
+              placeholder="Re-type password"
+              onChange={(e) => setRePassword(e.target.value)}
+            />
+            <button type="submit" className="btn-blue m-2 py-1 rounded">
+              Sign In
+            </button>
+            {error && (
+              <p className="text-danger text-center small p-0 m-2 alert alert-danger">
+                {error}
+              </p>
+            )}
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
